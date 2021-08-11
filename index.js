@@ -86,10 +86,11 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
- /*your code here*/
+function addFlavor(array,flavor){
+  array.unshift(flavor);
+  return [...array];
 }
-
+addFlavor(originalFlavors,"Rainbow Sherbert");
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -102,8 +103,9 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(array){
+ array.pop();
+ return array;
 }
 
 
@@ -119,8 +121,8 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(array, number){
+  return array[number];
 }
 
 
@@ -139,8 +141,11 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(array, flavor){
+  for (let i=0; i<array.length; i++){
+    if(array[i]===flavor){array.splice(i,1)};
+  }
+  return array;
 }
 
 
